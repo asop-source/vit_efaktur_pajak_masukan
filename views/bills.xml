@@ -1,0 +1,27 @@
+<odoo>
+  <data>
+
+    <record id="bills_pajak_masukan" model="ir.ui.view">
+          <field name="name">pajak_masukan</field>
+          <field name="model">account.invoice</field>
+          <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+              <field name='efaktur_masukan' position='replace'>
+                    <field name="efaktur_masukan" invisible='1' />
+              </field>
+
+              <notebook>
+                  <page string="Pajak Masukan">
+                      <field name="pajak_ids">
+                          <tree string="Pajak" editable="bottom">
+                              <field name="nomor"/>
+                              <field name="amount"/>
+                          </tree>
+                      </field>
+                  </page>
+              </notebook>
+            </field>
+    </record>
+
+  </data>
+</odoo>
